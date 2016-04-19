@@ -24,7 +24,7 @@ util.inherits(PatternMatch, transform);
 PatternMatch.prototype._transform = function(chunk, encoding, done) { 
     var data = chunk.toString();
     this.push( '----------------INPUT----------------' ); 
-    this.push( data ); 
+    this.push('[', data, ']' ); 
     var parse = data.split(this.pattern)
     
     this._lastLineData = parse.splice( parse.length-1, 1)[0] 
